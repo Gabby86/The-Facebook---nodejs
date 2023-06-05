@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook</title>
+</head>
+<body>
+    <h1>Welcome to Facebook</h1>
+    <a href="/add-new">Add a post</a>
+    <div class="feeds-content">
+        <% for(let i = 0; i < users.length; i++) { %>
+          <div class="feeds-container">
+            <h2><%= users[i].title %></h2>
+            <p><%=users[i].create_at %></p>
+            <p><%= users[i].text.slice(0, 50) %></p>
+            <a href="/fullPost/<%= users[i]._id %>">Read more...</a>
+          </div>
+        <% } %>
+    </div>
+</body>
+</html>

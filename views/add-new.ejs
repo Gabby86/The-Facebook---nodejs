@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>add Feeds</title>
+</head>
+<body>
+    <a href="/">Home</a>
+    <form action="/createPost" method="post">
+        <input type="text" placeholder="Name" name="title">
+        <% if (err) {%>
+            <p><%= err['title'] %></p>
+        <% } %>
+        <textarea name="text" id="textarea" placeholder="Message"></textarea>
+        <% if (err) {%>
+            <p><%= err['text'] %></p>
+        <% } %>
+        <button>Submit</button>
+    </form>
+</body>
+</html>
